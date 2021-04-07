@@ -1,0 +1,21 @@
+package com.sample
+
+import com.sample.Person;
+
+rule RaiseSalary
+  lock-on-active true
+  when
+    $p : Person(salary <= 1000)
+  then
+    $p.setSalary($p.getSalary() + 100);
+    update($p);
+end
+
+rule RaiseGrade
+  lock-on-active true
+  when
+    $p : Person(salary > 1000)
+  then
+    $p.setGrade($p.getGrade() + 1);
+    update($p);
+end

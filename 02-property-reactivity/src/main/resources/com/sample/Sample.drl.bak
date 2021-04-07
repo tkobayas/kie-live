@@ -1,0 +1,19 @@
+package com.sample
+
+import com.sample.Person;
+
+rule RaiseGrade
+  when
+    $p : Person(salary > 1000)
+  then
+    $p.setGrade($p.getGrade() + 1);
+    //$p.promotion();
+    update($p);
+end
+
+rule SendMessage
+  when
+    $p : Person(grade >= 2)
+  then
+    System.out.println("Congratulation!");
+end
