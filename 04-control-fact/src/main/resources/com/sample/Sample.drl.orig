@@ -1,0 +1,53 @@
+package com.sample
+
+import com.sample.Person;
+
+rule Rule1_1
+  when
+    $p : Person(grade == 1)
+  then
+    System.out.println(kcontext.getRule().getName() + " is fired");
+    // do something
+end
+
+rule Rule1_2
+  when
+    $p : Person(grade == 2)
+  then
+    System.out.println(kcontext.getRule().getName() + " is fired");
+    // do something
+end
+
+rule Rule2_1
+  when
+    $p : Person(grade == 1, salary > 1000)
+  then
+    System.out.println(kcontext.getRule().getName() + " is fired");
+    // do something
+end
+
+rule Rule2_2
+  when
+    $p : Person(grade == 1, salary > 2000)
+  then
+    System.out.println(kcontext.getRule().getName() + " is fired");
+    // do something
+end
+
+rule Rule3_1
+  when
+    $p : Person(grade == 1, salary > 500)
+  then
+    System.out.println(kcontext.getRule().getName() + " is fired");
+    // do something
+    $p.setGrade($p.getGrade() + 1);
+    update($p);
+end
+
+rule Rule3_2
+  when
+    $p : Person(grade == 3, salary > 2000)
+  then
+    System.out.println(kcontext.getRule().getName() + " is fired");
+    // do something
+end
