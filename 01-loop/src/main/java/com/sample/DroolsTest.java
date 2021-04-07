@@ -15,13 +15,12 @@ public class DroolsTest {
         KieContainer kcontainer = ks.getKieClasspathContainer();
         KieBase kbase = kcontainer.getKieBase();
         KieSession ksession = kbase.newKieSession();
-        
-       ksession.addEventListener(new DebugRuleRuntimeEventListener());
-       ksession.addEventListener(new DebugAgendaEventListener());
 
-        // Person john = new Person("John", 800, 1);
-       Person john = new Person("John", 1000, 1);
-        
+//               ksession.addEventListener(new DebugRuleRuntimeEventListener());
+//               ksession.addEventListener(new DebugAgendaEventListener());
+
+        Person john = new Person("John", 1000, 2);
+
         System.out.println("--- before rule firing");
         System.out.println(john);
 

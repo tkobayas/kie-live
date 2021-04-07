@@ -1,0 +1,21 @@
+package com.sample
+
+import com.sample.Person;
+
+rule RaiseSalary
+  no-loop true
+  when
+    $p : Person(salary <= 1000, grade >= 1)
+  then
+    $p.setSalary($p.getSalary() + 100);
+    update($p);
+end
+
+rule RaiseGrade
+  no-loop true
+  when
+    $p : Person(salary > 1000, grade >= 1)
+  then
+    $p.setGrade($p.getGrade() + 1);
+    update($p);
+end

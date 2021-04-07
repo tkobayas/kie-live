@@ -4,7 +4,8 @@ import com.sample.Person;
 
 rule RaiseGrade
   when
-    $p : Person(salary > 1000)
+    //$p : Person(salary > 1000)
+    $p : Person(hasGoodSalary()) @watch( !*, salary )
   then
     System.out.println("RaiseGrade is fired");
     $p.setGrade($p.getGrade() + 1);

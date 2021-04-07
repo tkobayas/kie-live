@@ -44,10 +44,6 @@ public class Person {
         this.grade++;
     }
 
-    public boolean hasGoodSalary() {
-        return (this.salary > 1000);
-    }
-
     @Override
     public String toString() {
         return "Person [name=" + name + ", salary=" + salary + ", grade=" + grade + "]";
