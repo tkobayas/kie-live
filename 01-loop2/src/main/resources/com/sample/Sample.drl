@@ -1,0 +1,21 @@
+package com.sample
+
+import com.sample.Order;
+
+rule Guitar_Discount
+    when
+        $o : Order(item == "Guitar", discount < 2000)
+    then
+        System.out.println("Fire : " + kcontext.getRule().getName());
+        $o.setDiscount($o.getDiscount() + 200);
+        update($o);
+end
+
+rule High_Price_Discount
+    when
+    $o : Order(price > 5000, discount < 2000)
+    then
+        System.out.println("Fire : " + kcontext.getRule().getName());
+        $o.setDiscount($o.getDiscount() + 400);
+        update($o);
+end
