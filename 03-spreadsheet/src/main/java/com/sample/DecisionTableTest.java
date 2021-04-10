@@ -16,13 +16,14 @@ public class DecisionTableTest {
          // useful for debug
             System.setProperty("drools.dump.dir", "/home/tkobayas/tmp");
             
-            
             // load up the knowledge base
             KieServices ks = KieServices.Factory.get();
 
             // useful for debug
             SpreadsheetCompiler compiler = new SpreadsheetCompiler();
-            String drl = compiler.compile(ks.getResources().newClassPathResource("com/sample/Sample.xls").getInputStream(), InputType.XLS);
+            String drl = compiler.compile(ks.getResources()
+                                            .newClassPathResource("com/sample/Sample.xls").getInputStream(),
+                                             InputType.XLS);
             System.out.println(drl);
 
             KieContainer kContainer = ks.getKieClasspathContainer();
