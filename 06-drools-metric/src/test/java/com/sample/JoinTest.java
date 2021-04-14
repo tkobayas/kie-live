@@ -32,9 +32,9 @@ public class JoinTest {
 
 
         // convenient static methods
-        System.out.println("======= dumpRete output");
-        ReteDumper.dumpRete(kbase);
-        System.out.println("=======");
+        // System.out.println("======= dumpRete output");
+        // ReteDumper.dumpRete(kbase);
+        // System.out.println("=======");
         System.out.println();
         System.out.println("======= dumpAssociatedRulesRete output");
         ReteDumper.dumpAssociatedRulesRete(kbase);

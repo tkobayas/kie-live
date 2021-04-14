@@ -1,0 +1,15 @@
+package com.sample
+
+import com.sample.Customer;
+import com.sample.Product;
+import com.sample.Order;
+
+
+rule FindHighPriceOrder
+    when
+        $c : Customer()
+        $p : Product()
+        $o : Order(price > $p.basePrice - $c.extraDiscount)
+    then
+        //System.out.println("Fire : " + kcontext.getRule().getName());
+end

@@ -16,8 +16,8 @@ public class DroolsTest {
         KieBase kbase = kcontainer.getKieBase();
         KieSession ksession = kbase.newKieSession();
 
-//               ksession.addEventListener(new DebugRuleRuntimeEventListener());
-//               ksession.addEventListener(new DebugAgendaEventListener());
+            //   ksession.addEventListener(new DebugRuleRuntimeEventListener());
+            //   ksession.addEventListener(new DebugAgendaEventListener());
 
         Order order = new Order(1, "Guitar", 6000, 0);
 
