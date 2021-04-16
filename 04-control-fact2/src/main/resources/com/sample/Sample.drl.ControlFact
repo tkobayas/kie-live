@@ -32,7 +32,7 @@ rule Rule2_1
   then
     System.out.println(kcontext.getRule().getName() + " is fired");
     // do something
-    $c.setStage("FinalTask");
+    $c.setStage("FinalEvaluation");
     update($c);
 end
 
@@ -43,13 +43,13 @@ rule Rule2_2
   then
     System.out.println(kcontext.getRule().getName() + " is fired");
     // do something
-    $c.setStage("FinalTask");
+    $c.setStage("FinalEvaluation");
     update($c);
 end
 
 rule Rule3_1
   when
-    $c : ControlFact(stage == "FinalTask")
+    $c : ControlFact(stage == "FinalEvaluation")
     $o : Order(price >= 5000)
   then
     System.out.println(kcontext.getRule().getName() + " is fired");
@@ -60,7 +60,7 @@ end
 
 rule Rule3_2
   when
-    $c : ControlFact(stage == "FinalTask")
+    $c : ControlFact(stage == "FinalEvaluation")
     $o : Order(discount > 200)
   then
     System.out.println(kcontext.getRule().getName() + " is fired");

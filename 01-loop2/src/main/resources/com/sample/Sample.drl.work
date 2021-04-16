@@ -3,18 +3,23 @@ package com.sample
 import com.sample.Order;
 
 rule Guitar_Discount
+    //no-loop true
+    //lock-on-active true
     when
-         $o : Order(item == "Guitar")
+        $o : Order(item == "Guitar", discount < 2000)
     then
         System.out.println("Fire : " + kcontext.getRule().getName());
         $o.setDiscount($o.getDiscount() + 200);
         update($o);
 end
 
-rule Discount_Message
+rule High_Price_Discount
+    //no-loop true
+    //lock-on-active true
     when
-    $o : Order(discount > 0)
+    $o : Order(price > 5000, discount < 2000)
     then
         System.out.println("Fire : " + kcontext.getRule().getName());
-        System.out.println("You got a discount!");
+        $o.setDiscount($o.getDiscount() + 400);
+        update($o);
 end

@@ -7,8 +7,10 @@ import com.sample.Order;
 
 rule FindHighPriceOrder
     when
-        $c : Customer()
+        $c : Customer(extraDiscount > 1000)
         $p : Product()
+        
+        eval ($p.price > 500)
         $o : Order(price > $p.basePrice - $c.extraDiscount)
     then
         //...

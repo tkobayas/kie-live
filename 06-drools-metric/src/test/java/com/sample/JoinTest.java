@@ -21,7 +21,7 @@ public class JoinTest {
     public void testJoin() {
 
         System.setProperty("drools.metric.logger.enabled", "true");
-        System.setProperty("drools.metric.logger.threshold", "500"); // microseconds
+        System.setProperty("drools.metric.logger.threshold", "500"); // microseconds. 500 is default
 
         KieServices ks = KieServices.Factory.get();
         KieContainer kcontainer = ks.getKieClasspathContainer();

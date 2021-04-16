@@ -4,7 +4,8 @@ import com.sample.Order;
 
 rule Guitar_Discount
     when
-         $o : Order(item == "Guitar")
+        $o : Order(item == "Guitar")
+        // $o : Order(checkSpecialItem()) @watch(!*, item)
     then
         System.out.println("Fire : " + kcontext.getRule().getName());
         $o.setDiscount($o.getDiscount() + 200);

@@ -3,8 +3,6 @@ package com.sample
 import com.sample.Order;
 
 rule Guitar_Discount
-    //no-loop true
-    //lock-on-active true
     when
         $o : Order(item == "Guitar", discount < 2000)
     then
@@ -14,8 +12,6 @@ rule Guitar_Discount
 end
 
 rule High_Price_Discount
-    //no-loop true
-    //lock-on-active true
     when
     $o : Order(price > 5000, discount < 2000)
     then
