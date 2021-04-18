@@ -7,11 +7,9 @@ import com.sample.Order;
 
 rule FindHighPriceOrder
     when
-        $c : Customer(extraDiscount > 1000)
+        $c : Customer()
         $p : Product()
-        
-        eval ($p.price > 500)
         $o : Order(price > $p.basePrice - $c.extraDiscount)
     then
-        //...
+        //System.out.println("Fire : " + kcontext.getRule().getName());
 end
