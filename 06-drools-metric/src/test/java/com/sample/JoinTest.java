@@ -57,7 +57,7 @@ public class JoinTest {
 
         long start = System.currentTimeMillis();
         ksession.fireAllRules();
-        System.out.println("  -> elapsed time (ms) : " + (System.currentTimeMillis() - start));
+        System.out.println("  -> total elapsed time (ms) : " + (System.currentTimeMillis() - start));
 
         ksession.dispose();
 
